@@ -8,7 +8,17 @@ alert("Jquery ready");
 		alert("Device Ready");	
  		var element = document.getElementById('deviceProperties');
 		var device_uuid = device.uuid;
-       
+        window.plugins.uniqueDeviceID.get(success, fail);
+   
+    function success(uuid)
+{
+    alert(uuid);
+    
+};
+function fail(uuid)
+{
+    alert("failure function");
+};
  	var networkState = navigator.connection.type;
     if (networkState == Connection.NONE)
     {
@@ -23,15 +33,15 @@ alert("Jquery ready");
     	alert("else loop");
     	
     	 
-    		is_device_registered(device_uuid);
+    		is_device_registered(uuid);
    
- function is_device_registered(device_uuid)
+ function is_device_registered(uuid)
 {
 	alert("into function");
 	             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/is_device_registered',
               type: "post",
-      		  data: { device_uuid:device_uuid},
+      		  data: { device_uuid:uuid},
               dataType: "json",
               crossDomain: true,
               
