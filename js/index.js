@@ -1,11 +1,11 @@
 	$(document).ready(function(){
 					
-
+alert("Jquery ready");
     document.addEventListener("deviceready",onDeviceReady,false);     
 
 });
 		function onDeviceReady() {
-			
+		alert("Device Ready");	
  		var element = document.getElementById('deviceProperties');
 		var device_uuid = device.uuid;
        
@@ -20,7 +20,7 @@
     }
     else
 {
-    	
+    	alert("else loop");
     	
     	 
     		is_device_registered(device_uuid);
@@ -68,7 +68,7 @@
 });
               },
 			                success: function (data) {
-							
+							alert("Suvccess");
 							if(data.logindata[0].is_security_question_answered==1 && data.logindata[0].count>=1)
       {
    
