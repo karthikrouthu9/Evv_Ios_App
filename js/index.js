@@ -27,30 +27,18 @@ alert("Jquery ready");
    
  function is_device_registered(device_uuid)
 {
+	alert("into function");
 	             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/is_device_registered',
               type: "post",
-      		  data: 'device_uuid='+device.uuid,
+      		  data: { device_uuid:device_uuid},
               dataType: "json",
               crossDomain: true,
               
               
 			  error: function (jqXHR, textStatus, errorThrown) {
 			  	alert("Error func");
-				  var data=JSON.stringify(jqXHR, null, 4);
-				  alert("Error ALERT");
-				  alert(data);
-				  alert("ErroR");
-				  alert(jqXHR.status);
-				  alert(jqXHR.statusText);
-				  alert("One");
-				  var data1=JSON.stringify(textStatus, null, 4);
-				  alert(data1);
-				  alert(textStatus.status);
-				  alert("Two");
-				  var data2=JSON.stringify(errorThrown, null, 4);
-				  alert(data2);
-				  alert(errorThrown.statusText);
+				 
              bootbox.dialog({
   message: "Problem with connecting to server. Please try after sometime.",
   title: "Message",
