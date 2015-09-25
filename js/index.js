@@ -36,6 +36,7 @@ alert("Jquery ready");
               
               
 			  error: function (jqXHR, textStatus, errorThrown) {
+			  	alert("Error func");
 				  var data=JSON.stringify(jqXHR, null, 4);
 				  alert("Error ALERT");
 				  alert(data);
