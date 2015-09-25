@@ -14,11 +14,6 @@ alert("Jquery ready");
 {
     alert(uuid);
     
-};
-function fail(uuid)
-{
-    alert("failure function");
-};
  	var networkState = navigator.connection.type;
     if (networkState == Connection.NONE)
     {
@@ -91,6 +86,12 @@ function fail(uuid)
 
 }
 }
+};
+function fail(uuid)
+{
+    alert("failure function");
+};
+
 			}
 					    			
     			
